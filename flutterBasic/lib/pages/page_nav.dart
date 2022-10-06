@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/pages/page_app_bar.dart';
+import 'package:flutter_basic/pages/page_icon.dart';
+import 'package:flutter_basic/pages/page_image.dart';
 import 'package:flutter_basic/pages/page_scaffold.dart';
 import 'package:flutter_basic/pages/page_text.dart';
 import 'package:flutter_basic/widgets/custom_app_bar.dart';
@@ -38,6 +40,18 @@ class _PageNavState extends State<PageNav> {
             name: 'Text',
             icon: Icons.title,
             page: const PageText(),
+          ),
+          _buildListItem(
+            context: context,
+            name: 'Image',
+            icon: Icons.image,
+            page: const PageImage(),
+          ),
+          _buildListItem(
+            context: context,
+            name: 'Icon',
+            icon: Icons.star_rate,
+            page: const PageIcon(),
           ),
         ],
       ),
