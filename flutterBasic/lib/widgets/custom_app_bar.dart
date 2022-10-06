@@ -500,15 +500,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ModalRoute<dynamic>? parentRoute = ModalRoute.of(context);
+    final bool canPop = parentRoute?.canPop ?? false;
     return AppBar(
-      leading: leading ??
-          IconButton(
-            icon: const Icon(Icons.arrow_back),
-            tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-            onPressed: () {
-              Navigator.maybePop(context);
-            },
-          ),
+      leading: leading == null && canPop
+          ? IconButton(
+              icon: const Icon(Icons.arrow_back),
+              tooltip: MaterialLocalizations.of(context).backButtonTooltip,
+              onPressed: () {
+                Navigator.maybePop(context);
+              },
+            )
+          : leading,
       automaticallyImplyLeading: automaticallyImplyLeading,
       title: title,
       actions: actions,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/pages/page_app_bar.dart';
 import 'package:flutter_basic/pages/page_button.dart';
+import 'package:flutter_basic/pages/page_container.dart';
 import 'package:flutter_basic/pages/page_icon.dart';
 import 'package:flutter_basic/pages/page_image.dart';
 import 'package:flutter_basic/pages/page_scaffold.dart';
@@ -59,6 +60,12 @@ class _PageNavState extends State<PageNav> {
             name: 'Button',
             icon: Icons.videogame_asset,
             page: const PageButton(),
+          ),
+          _buildListItem(
+            context: context,
+            name: 'Container',
+            icon: Icons.airplay,
+            page: const PageContianer(),
           ),
         ],
       ),

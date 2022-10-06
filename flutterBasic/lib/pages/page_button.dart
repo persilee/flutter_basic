@@ -15,7 +15,7 @@ class _PageButtonState extends State<PageButton> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       appBar: CustomAppBar(
-        title: const Text('Icon'),
+        title: const Text('Button'),
       ),
       body: Center(
         child: Column(
