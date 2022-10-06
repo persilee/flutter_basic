@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/pages/page_app_bar.dart';
 import 'package:flutter_basic/pages/page_scaffold.dart';
+import 'package:flutter_basic/pages/page_text.dart';
 import 'package:flutter_basic/widgets/custom_app_bar.dart';
 import 'package:flutter_basic/widgets/custom_scaffold.dart';
 
@@ -31,6 +32,12 @@ class _PageNavState extends State<PageNav> {
             name: 'AppBar',
             icon: Icons.view_stream,
             page: const PageAppBar(),
+          ),
+          _buildListItem(
+            context: context,
+            name: 'Text',
+            icon: Icons.title,
+            page: const PageText(),
           ),
         ],
       ),
