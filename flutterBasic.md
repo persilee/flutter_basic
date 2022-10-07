@@ -1,23 +1,3 @@
----
-title: Flutter 基础知识
-tags:
-  - flutter
-  - dart
-  - retrofit
-copyright: true
-comments: true
-date: 2022-09-24 16:46:36
-categories: Dart
-top: 123
-photos:
----
-
-{% li https://cdn.lishaoy.net/beautifulFlutter/flutter_750x400.png, flutter app, flutter app %}
-
-博客好久没更新了，由于公司需要我来讲解一些**flutter**相关的基础知识，我需要准备一些资料，就顺便更新一下博客😋。
-
-<!-- more -->
-
 # Dart语言
 
 ## Dart 概述
