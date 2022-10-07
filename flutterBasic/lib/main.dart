@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/pages/page_nav.dart';
+import 'package:flutter_basic/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: createMaterialColor(const Color(0xff3161CE)),
       ),
-      home: const PageNav(),
+      initialRoute: pageNav,
+      routes: appRoutes,
+      onGenerateRoute: (settings) => onGenerateRoute(settings),
     );
   }
 

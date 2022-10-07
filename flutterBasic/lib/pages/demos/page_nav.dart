@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/pages/page_align.dart';
-import 'package:flutter_basic/pages/page_app_bar.dart';
-import 'package:flutter_basic/pages/page_button.dart';
-import 'package:flutter_basic/pages/page_column.dart';
-import 'package:flutter_basic/pages/page_container.dart';
-import 'package:flutter_basic/pages/page_flex.dart';
-import 'package:flutter_basic/pages/page_icon.dart';
-import 'package:flutter_basic/pages/page_image.dart';
-import 'package:flutter_basic/pages/page_scaffold.dart';
-import 'package:flutter_basic/pages/page_stack.dart';
-import 'package:flutter_basic/pages/page_text.dart';
+import 'package:flutter_basic/pages/demos/page_align.dart';
+import 'package:flutter_basic/pages/demos/page_app_bar.dart';
+import 'package:flutter_basic/pages/demos/page_button.dart';
+import 'package:flutter_basic/pages/demos/page_column.dart';
+import 'package:flutter_basic/pages/demos/page_container.dart';
+import 'package:flutter_basic/pages/demos/page_flex.dart';
+import 'package:flutter_basic/pages/demos/page_icon.dart';
+import 'package:flutter_basic/pages/demos/page_image.dart';
+import 'package:flutter_basic/pages/demos/page_scaffold.dart';
+import 'package:flutter_basic/pages/demos/page_stack.dart';
+import 'package:flutter_basic/pages/demos/page_text.dart';
 import 'package:flutter_basic/widgets/custom_app_bar.dart';
 import 'package:flutter_basic/widgets/custom_scaffold.dart';
 
