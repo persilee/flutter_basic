@@ -1,8 +1,3 @@
-// Copyright (c) 2021 zhanggenhua. All rights reserved.
-//
-// Author: zhanggenhua
-// Date: 2021-05-20
-
 import 'dart:ui';
 
 import 'package:flutter/gestures.dart';

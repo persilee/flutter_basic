@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_basic/generated/l10n.dart';
 import 'package:flutter_basic/model/language_model.dart';
-import 'package:flutter_basic/pages/utils/language.dart';
-import 'package:flutter_basic/pages/utils/screen_util.dart';
-import 'package:flutter_basic/pages/utils/status_bar_util.dart';
 import 'package:flutter_basic/routes/routes.dart';
+import 'package:flutter_basic/utils/language.dart';
+import 'package:flutter_basic/utils/screen_util.dart';
+import 'package:flutter_basic/utils/status_bar_util.dart';
 import 'package:flutter_basic/widgets/custom_button.dart';
 import 'package:provider/src/provider.dart';
 

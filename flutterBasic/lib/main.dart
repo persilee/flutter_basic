@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_basic/model/language_model.dart';
-import 'package:flutter_basic/pages/utils/hive_store.dart';
-import 'package:flutter_basic/pages/utils/language.dart';
-import 'package:flutter_basic/pages/utils/screen_util.dart';
 import 'package:flutter_basic/routes/routes.dart';
+import 'package:flutter_basic/utils/hive_store.dart';
+import 'package:flutter_basic/utils/language.dart';
+import 'package:flutter_basic/utils/screen_util.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
