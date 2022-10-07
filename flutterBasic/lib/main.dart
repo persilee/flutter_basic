@@ -1,8 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_basic/model/language_model.dart';
+import 'package:flutter_basic/pages/utils/hive_store.dart';
+import 'package:flutter_basic/pages/utils/language.dart';
+import 'package:flutter_basic/pages/utils/screen_util.dart';
 import 'package:flutter_basic/routes/routes.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'generated/l10n.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Boxes.openBoxes();
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => LanguageModel()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,16 +31,41 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(width: 360, height: 920, allowFontScaling: true);
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: createMaterialColor(const Color(0xff3161CE)),
       ),
-      initialRoute: pageNav,
+      initialRoute: pageWelcome,
       routes: appRoutes,
       onGenerateRoute: (settings) => onGenerateRoute(settings),
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        _initLang(locale);
+      },
+      supportedLocales: S.delegate.supportedLocales,
     );
+  }
+
+  _initLang(Locale? deviceLocale) {
+    print(deviceLocale?.languageCode);
+    String lang = 'en';
+    switch (deviceLocale?.languageCode) {
+      case 'zh':
+        lang = 'zh_CN';
+        break;
+      case 'km':
+        lang = 'km_KH';
+        break;
+    }
+    String savedLang = Language.getSaveLanguage();
   }
 
   MaterialColor createMaterialColor(Color color) {
