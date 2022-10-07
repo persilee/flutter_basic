@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/pages/page_align.dart';
 import 'package:flutter_basic/pages/page_app_bar.dart';
 import 'package:flutter_basic/pages/page_button.dart';
+import 'package:flutter_basic/pages/page_column.dart';
 import 'package:flutter_basic/pages/page_container.dart';
+import 'package:flutter_basic/pages/page_flex.dart';
 import 'package:flutter_basic/pages/page_icon.dart';
 import 'package:flutter_basic/pages/page_image.dart';
 import 'package:flutter_basic/pages/page_scaffold.dart';
+import 'package:flutter_basic/pages/page_stack.dart';
 import 'package:flutter_basic/pages/page_text.dart';
 import 'package:flutter_basic/widgets/custom_app_bar.dart';
 import 'package:flutter_basic/widgets/custom_scaffold.dart';
@@ -67,6 +71,33 @@ class _PageNavState extends State<PageNav> {
             icon: Icons.airplay,
             page: const PageContianer(),
           ),
+          _buildListItem(
+            context: context,
+            name: 'Align',
+            icon: Icons.format_indent_increase,
+            page: const PageAlign(),
+          ),
+          _buildListItem(
+            context: context,
+            name: 'Column And Row',
+            icon: Icons.settings_overscan,
+            page: const PageColumnRow(),
+          ),
+          _buildListItem(
+            context: context,
+            name: 'Flex And Expanded',
+            icon: Icons.vertical_split,
+            page: const PageFlex(),
+          ),
+          _buildListItem(
+            context: context,
+            name: 'Stack And Positioned',
+            icon: Icons.view_carousel,
+            page: const PageStack(),
+          ),
+          const SizedBox(
+            height: 20.0,
+          )
         ],
       ),
     );
