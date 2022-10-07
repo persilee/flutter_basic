@@ -1,1 +1,8 @@
-{}
+{
+  "sign_up": "Sign Up",
+  "sign_in": "Sign In",
+  "welcome_desc": "Welcome to OnePay Wallet",
+  "navigation_wallet": "Wallet",
+  "navigation_coffee": "Coffee",
+  "navigation_profile": "Profile"
+}

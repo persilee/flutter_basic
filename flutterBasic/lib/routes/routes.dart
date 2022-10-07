@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/pages/page_navigation.dart';
+import 'package:flutter_basic/pages/sign_up/page_welcome.dart';
 
-const pageNav = '/pages/page_nav';
+const pageNav = '/page_navigation';
+const pageWelcome = '/sign_up/page_welcome';
 
 final appRoutes = {
   pageNav: (context) => const PageNavigation(),
+  pageWelcome: (context) => const PageWelcome(),
 };
 
 onGenerateRoute(RouteSettings settings) {

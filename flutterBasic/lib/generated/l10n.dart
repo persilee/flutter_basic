@@ -49,6 +49,66 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Sign Up`
+  String get sign_up {
+    return Intl.message(
+      'Sign Up',
+      name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get sign_in {
+    return Intl.message(
+      'Sign In',
+      name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to OnePay Wallet`
+  String get welcome_desc {
+    return Intl.message(
+      'Welcome to OnePay Wallet',
+      name: 'welcome_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet`
+  String get navigation_wallet {
+    return Intl.message(
+      'Wallet',
+      name: 'navigation_wallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coffee`
+  String get navigation_coffee {
+    return Intl.message(
+      'Coffee',
+      name: 'navigation_coffee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get navigation_profile {
+    return Intl.message(
+      'Profile',
+      name: 'navigation_profile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +117,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'zh', countryCode: 'CN'),
     ];
   }
 

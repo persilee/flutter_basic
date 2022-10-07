@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a zh_CN locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,16 +18,15 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'zh_CN';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "navigation_coffee": MessageLookupByLibrary.simpleMessage("Coffee"),
-        "navigation_profile": MessageLookupByLibrary.simpleMessage("Profile"),
-        "navigation_wallet": MessageLookupByLibrary.simpleMessage("Wallet"),
-        "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
-        "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
-        "welcome_desc":
-            MessageLookupByLibrary.simpleMessage("Welcome to OnePay Wallet")
+        "navigation_coffee": MessageLookupByLibrary.simpleMessage("咖啡"),
+        "navigation_profile": MessageLookupByLibrary.simpleMessage("个人"),
+        "navigation_wallet": MessageLookupByLibrary.simpleMessage("钱包"),
+        "sign_in": MessageLookupByLibrary.simpleMessage("登录"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("注册"),
+        "welcome_desc": MessageLookupByLibrary.simpleMessage("欢迎使用 OnePay 钱包")
       };
 }
