@@ -90,10 +90,10 @@ class S {
     );
   }
 
-  /// `Coffee`
+  /// `Services`
   String get navigation_coffee {
     return Intl.message(
-      'Coffee',
+      'Services',
       name: 'navigation_coffee',
       desc: '',
       args: [],

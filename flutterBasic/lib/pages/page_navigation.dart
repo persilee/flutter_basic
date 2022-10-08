@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/generated/l10n.dart';
-import 'package:flutter_basic/pages/coffee/page_coffee.dart';
 import 'package:flutter_basic/pages/demos/page_nav.dart';
 import 'package:flutter_basic/pages/home/page_home.dart';
 import 'package:flutter_basic/pages/profile/page_profile.dart';
@@ -76,8 +75,8 @@ class _PageNavigationState extends State<PageNavigation> {
                 index: 1,
                 name: S.current.navigation_coffee,
                 icon: _currentIndex == 1
-                    ? 'assets/images/navigation/icon_wallet_active.png'
-                    : 'assets/images/navigation/icon_coffee.png'),
+                    ? 'assets/images/navigation/icon_service_active.png'
+                    : 'assets/images/navigation/icon_service.png'),
             _buildBottomAppBarItem(
                 index: 2,
                 name: S.current.navigation_profile,

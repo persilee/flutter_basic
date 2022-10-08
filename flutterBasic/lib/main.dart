@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_basic/model/language_model.dart';
 import 'package:flutter_basic/routes/routes.dart';
 import 'package:flutter_basic/utils/hive_store.dart';
@@ -28,7 +27,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(width: 360, height: 920, allowFontScaling: true);
@@ -38,7 +36,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: createMaterialColor(const Color(0xff3161CE)),
       ),
-      initialRoute: pageWelcome,
+      initialRoute: pageDemosNav,
       routes: appRoutes,
       onGenerateRoute: (settings) => onGenerateRoute(settings),
       localizationsDelegates: const [
@@ -48,24 +46,13 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate
       ],
       localeResolutionCallback: (locale, supportedLocales) {
-        _initLang(locale);
+        WidgetsBinding.instance?.addPostFrameCallback((_) {
+          String savedLang = Language.getSaveLanguage();
+          context.read<LanguageModel>().selectLanguage(savedLang);
+        });
       },
       supportedLocales: S.delegate.supportedLocales,
     );
-  }
-
-  _initLang(Locale? deviceLocale) {
-    print(deviceLocale?.languageCode);
-    String lang = 'en';
-    switch (deviceLocale?.languageCode) {
-      case 'zh':
-        lang = 'zh_CN';
-        break;
-      case 'km':
-        lang = 'km_KH';
-        break;
-    }
-    String savedLang = Language.getSaveLanguage();
   }
 
   MaterialColor createMaterialColor(Color color) {
