@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: createMaterialColor(const Color(0xff3161CE)),
       ),
-      initialRoute: pageDemosNav,
+      initialRoute: pageWelcome,
       routes: appRoutes,
       onGenerateRoute: (settings) => onGenerateRoute(settings),
       localizationsDelegates: const [
