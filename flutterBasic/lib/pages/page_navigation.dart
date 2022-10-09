@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/generated/l10n.dart';
 import 'package:flutter_basic/pages/demos/page_nav.dart';
@@ -53,7 +55,11 @@ class _PageNavigationState extends State<PageNavigation> {
       notchMargin: 0,
       color: const Color(0xFFF1F4FF),
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
+        margin: EdgeInsets.only(
+          left: 20,
+          right: 20,
+          bottom: Platform.isAndroid ? 20 : 0,
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
         height: 54,
         decoration: const BoxDecoration(
