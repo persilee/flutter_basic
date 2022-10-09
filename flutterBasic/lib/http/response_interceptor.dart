@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_basic/http/base_response.dart';
+import 'package:OnePay/http/base_response.dart';
 
 import 'app_exceptions.dart';
 

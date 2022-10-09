@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_basic/http/request_interceptor.dart';
-import 'package:flutter_basic/http/response_interceptor.dart';
+import 'package:OnePay/http/request_interceptor.dart';
+import 'package:OnePay/http/response_interceptor.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'error_interceptor.dart';

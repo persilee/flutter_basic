@@ -1,20 +1,20 @@
+import 'package:OnePay/generated/l10n.dart';
+import 'package:OnePay/http/model/login_apply_req.dart';
+import 'package:OnePay/http/model/login_apply_resp.dart';
+import 'package:OnePay/http/model/login_confirm_req.dart';
+import 'package:OnePay/http/model/login_confirm_resp.dart';
+import 'package:OnePay/http/service/user_manager_service.dart';
+import 'package:OnePay/model/language_model.dart';
+import 'package:OnePay/routes/routes.dart';
+import 'package:OnePay/utils/hive_store.dart';
+import 'package:OnePay/utils/language.dart';
+import 'package:OnePay/utils/screen_util.dart';
+import 'package:OnePay/utils/status_bar_util.dart';
+import 'package:OnePay/widgets/common_widgets.dart';
+import 'package:OnePay/widgets/custom_button.dart';
 import 'package:custom_pop_up_menu/custom_pop_up_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_basic/generated/l10n.dart';
-import 'package:flutter_basic/http/model/login_apply_req.dart';
-import 'package:flutter_basic/http/model/login_apply_resp.dart';
-import 'package:flutter_basic/http/model/login_confirm_req.dart';
-import 'package:flutter_basic/http/model/login_confirm_resp.dart';
-import 'package:flutter_basic/http/service/user_manager_service.dart';
-import 'package:flutter_basic/model/language_model.dart';
-import 'package:flutter_basic/routes/routes.dart';
-import 'package:flutter_basic/utils/hive_store.dart';
-import 'package:flutter_basic/utils/language.dart';
-import 'package:flutter_basic/utils/screen_util.dart';
-import 'package:flutter_basic/utils/status_bar_util.dart';
-import 'package:flutter_basic/widgets/common_widgets.dart';
-import 'package:flutter_basic/widgets/custom_button.dart';
 import 'package:provider/src/provider.dart';
 
 class PageWelcome extends StatefulWidget {

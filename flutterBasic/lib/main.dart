@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_basic/model/language_model.dart';
-import 'package:flutter_basic/routes/routes.dart';
-import 'package:flutter_basic/utils/hive_store.dart';
-import 'package:flutter_basic/utils/language.dart';
-import 'package:flutter_basic/utils/screen_util.dart';
-import 'package:flutter_basic/widgets/common_widgets.dart';
+import 'package:OnePay/model/language_model.dart';
+import 'package:OnePay/routes/routes.dart';
+import 'package:OnePay/utils/hive_store.dart';
+import 'package:OnePay/utils/language.dart';
+import 'package:OnePay/utils/screen_util.dart';
+import 'package:OnePay/widgets/common_widgets.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';

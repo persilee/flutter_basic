@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_basic/utils/hive_store.dart';
-import 'package:flutter_basic/utils/language.dart';
+import 'package:OnePay/utils/hive_store.dart';
+import 'package:OnePay/utils/language.dart';
 
 class HeaderInterceptor extends Interceptor {
   @override

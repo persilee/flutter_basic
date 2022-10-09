@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_basic/http/model/login_apply_req.dart';
-import 'package:flutter_basic/http/model/login_apply_resp.dart';
-import 'package:flutter_basic/http/model/login_confirm_req.dart';
-import 'package:flutter_basic/http/model/login_confirm_resp.dart';
+import 'package:OnePay/http/model/login_apply_req.dart';
+import 'package:OnePay/http/model/login_apply_resp.dart';
+import 'package:OnePay/http/model/login_confirm_req.dart';
+import 'package:OnePay/http/model/login_confirm_resp.dart';
 import 'package:retrofit/http.dart';
 
 import '../base_dio.dart';

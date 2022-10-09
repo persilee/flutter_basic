@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/pages/demos/page_nav.dart';
-import 'package:flutter_basic/pages/page_navigation.dart';
-import 'package:flutter_basic/pages/sign_up/page_welcome.dart';
+import 'package:OnePay/pages/demos/page_nav.dart';
+import 'package:OnePay/pages/page_navigation.dart';
+import 'package:OnePay/pages/sign_up/page_welcome.dart';
 
 const pageNav = '/page_navigation';
 const pageWelcome = '/sign_up/page_welcome';

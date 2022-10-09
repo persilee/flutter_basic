@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/widgets/custom_app_bar.dart';
-import 'package:flutter_basic/widgets/custom_scaffold.dart';
+import 'package:OnePay/widgets/custom_app_bar.dart';
+import 'package:OnePay/widgets/custom_scaffold.dart';
 
 class PageContianer extends StatefulWidget {
   const PageContianer({Key? key}) : super(key: key);

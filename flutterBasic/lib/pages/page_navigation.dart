@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/generated/l10n.dart';
-import 'package:flutter_basic/pages/demos/page_nav.dart';
-import 'package:flutter_basic/pages/home/page_home.dart';
-import 'package:flutter_basic/pages/profile/page_profile.dart';
+import 'package:OnePay/generated/l10n.dart';
+import 'package:OnePay/pages/demos/page_nav.dart';
+import 'package:OnePay/pages/home/page_home.dart';
+import 'package:OnePay/pages/profile/page_profile.dart';
 
 class PageNavigation extends StatefulWidget {
   const PageNavigation({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_basic/generated/l10n.dart';
+import 'package:OnePay/generated/l10n.dart';
 
 /// 自定义异常
 class AppException implements Exception {
