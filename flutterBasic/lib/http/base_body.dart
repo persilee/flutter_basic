@@ -1,29 +1,37 @@
-import 'package:flutter_basic/utils/hive_store.dart';
+/// data : {"mobile":"13184529326","gsmCode":"86"}
+/// appId : "wallet"
 
 class BaseBody {
-  String? userId;
-  String? loginName;
-  String? channel;
-  dynamic body;
+  dynamic _data;
+  String? _appId;
 
-  BaseBody({required this.body, this.userId, this.loginName}) {
-    final box = Boxes.userConfigBox;
-    userId = box.get(ConfigKey.USER_ID);
-    loginName = box.get(ConfigKey.USER_ACCOUNT);
-    channel = "MBS";
+  BaseBody({
+    required dynamic data,
+    String? appId,
+  }) {
+    _data = data;
+    _appId = appId ?? 'wallet';
   }
-
   BaseBody.fromJson(dynamic json) {
-    userId = json["userId"];
-    loginName = json["loginName"];
-    channel = json["channel"];
-    body = json["body"];
+    _data = json['data'];
+    _appId = json['appId'];
   }
 
-  Map<String, dynamic> toJson() => {
-        "loginName": loginName,
-        "userId": userId,
-        "channel": channel,
-        "body": body,
-      };
+  BaseBody copyWith({
+    dynamic data,
+    String? appId,
+  }) =>
+      BaseBody(
+        data: data ?? _data,
+        appId: appId ?? _appId,
+      );
+  dynamic get data => _data;
+  String? get appId => _appId;
+
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['data'] = _data;
+    map['appId'] = _appId;
+    return map;
+  }
 }

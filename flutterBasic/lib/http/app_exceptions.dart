@@ -86,6 +86,7 @@ class AppException implements Exception {
         }
       case DioErrorType.other:
         {
+          print('error: ${error.error.toString()}');
           if (error.error is SocketException) {
             return error.error =
                 AppException("-1", S.current.network_error_no_internet);

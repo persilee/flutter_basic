@@ -32,5 +32,6 @@ class ConfigKey {
   static const USER_ACCOUNT = "user_account";
 
   /// config key for user secret preference
-  static const NET_TOKEN = "net_token";
+  static const ACCESS_TOKEN = "access_token";
+  static const ACCESS_UID = "access_uid";
 }

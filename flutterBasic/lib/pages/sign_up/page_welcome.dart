@@ -2,11 +2,18 @@ import 'package:custom_pop_up_menu/custom_pop_up_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_basic/generated/l10n.dart';
+import 'package:flutter_basic/http/model/login_apply_req.dart';
+import 'package:flutter_basic/http/model/login_apply_resp.dart';
+import 'package:flutter_basic/http/model/login_confirm_req.dart';
+import 'package:flutter_basic/http/model/login_confirm_resp.dart';
+import 'package:flutter_basic/http/service/user_manager_service.dart';
 import 'package:flutter_basic/model/language_model.dart';
 import 'package:flutter_basic/routes/routes.dart';
+import 'package:flutter_basic/utils/hive_store.dart';
 import 'package:flutter_basic/utils/language.dart';
 import 'package:flutter_basic/utils/screen_util.dart';
 import 'package:flutter_basic/utils/status_bar_util.dart';
+import 'package:flutter_basic/widgets/common_widgets.dart';
 import 'package:flutter_basic/widgets/custom_button.dart';
 import 'package:provider/src/provider.dart';
 
@@ -116,7 +123,8 @@ class _PageWelcomeState extends State<PageWelcome> {
                     ),
                     isOutline: true,
                     clickCallback: () {
-                      Navigator.pushNamed(context, pageNav);
+                      _login();
+                      // Navigator.pushNamed(context, pageNav);
                     },
                   ),
                 ],
@@ -200,6 +208,25 @@ class _PageWelcomeState extends State<PageWelcome> {
         ],
       ),
     );
+  }
+
+  void _login() {
+    launchDataLoad(() async {
+      LoginApplyResp applyResp = await UserManagerService()
+          .loginApply(LoginApplyReq(mobile: '13184529326', gsmCode: '86'));
+
+      LoginConfirmResp loginConfirmResp =
+          await UserManagerService().loginConfirm(LoginConfirmReq(
+        authCode: '155594',
+        authId: applyResp.authId,
+        mobile: '13184529326',
+      ));
+
+      Boxes.userSecretConfigBox
+          .put(ConfigKey.ACCESS_TOKEN, loginConfirmResp.token);
+      Boxes.userSecretConfigBox
+          .put(ConfigKey.ACCESS_UID, loginConfirmResp.customerNo);
+    });
   }
 }
 
