@@ -1,34 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_basic/model/language_model.dart';
 import 'package:flutter_basic/routes/routes.dart';
 import 'package:flutter_basic/utils/hive_store.dart';
 import 'package:flutter_basic/utils/language.dart';
 import 'package:flutter_basic/utils/screen_util.dart';
+import 'package:flutter_basic/widgets/common_widgets.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'generated/l10n.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   await Boxes.openBoxes();
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => LanguageModel()),
-      ],
-      child: const MyApp(),
-    ),
-  );
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => LanguageModel()),
+        ],
+        child: const MyApp(),
+      ),
+    );
+    configLoading();
+  });
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(width: 360, height: 920, allowFontScaling: true);
@@ -48,24 +55,33 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate
       ],
       localeResolutionCallback: (locale, supportedLocales) {
-        _initLang(locale);
+        WidgetsBinding.instance?.addPostFrameCallback((_) {
+          String savedLang = Language.getSaveLanguage();
+          context.read<LanguageModel>().selectLanguage(savedLang);
+        });
       },
       supportedLocales: S.delegate.supportedLocales,
+      navigatorKey: navigatorKey,
+      builder: EasyLoading.init(
+          builder: (context, child) => MediaQuery(
+                data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+                child: Scaffold(
+                  resizeToAvoidBottomInset: false,
+                  body: GestureDetector(
+                      onTap: () {
+                        hideKeyboard(context);
+                      },
+                      child: child),
+                ),
+              )),
     );
   }
 
-  _initLang(Locale? deviceLocale) {
-    print(deviceLocale?.languageCode);
-    String lang = 'en';
-    switch (deviceLocale?.languageCode) {
-      case 'zh':
-        lang = 'zh_CN';
-        break;
-      case 'km':
-        lang = 'km_KH';
-        break;
+  void hideKeyboard(BuildContext context) {
+    FocusScopeNode currentFocus = FocusScope.of(context);
+    if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
+      FocusManager.instance.primaryFocus?.unfocus();
     }
-    String savedLang = Language.getSaveLanguage();
   }
 
   MaterialColor createMaterialColor(Color color) {
