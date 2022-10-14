@@ -92,11 +92,14 @@ flutter:
     - assets/images/navigation/
     - assets/images/language/
     - assets/images/home/
+<<<<<<< HEAD
     - assets/images/transfer/
     - assets/images/login/
     - assets/images/register/
     - assets/images/profile/
     - assets/images/receive_payment/
+=======
+>>>>>>> 3c57483220d55d01949d5d891d9759bc147b0aef
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
