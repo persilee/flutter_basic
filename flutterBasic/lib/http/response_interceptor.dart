@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:OnePay/http/base_response.dart';
+import 'package:one_pay/http/base_response.dart';
 
 import 'app_exceptions.dart';
 
@@ -42,13 +42,28 @@ class ResponseInterceptor extends Interceptor {
     //     name: "${response.realUri}->responseData");
     BaseResponse baseResponse = BaseResponse.fromJson(response.data);
     print('response.data: ${baseResponse.state}');
+    print('response.data: ${baseResponse.toJson()}');
     if (baseResponse.state == 0) {
       // String? token = baseResponse.token;
       //
       // if ((token ?? '').isNotEmpty) {
       //   Boxes.userSecretConfigBox.put(ConfigKey.NET_TOKEN, token);
       // }
-      response.data = baseResponse.data;
+      if (baseResponse.data is Map) {
+        response.data = baseResponse.data;
+      } else if (baseResponse.data == null) {
+        response.data = <String, dynamic>{};
+      } else {
+        Map<String, dynamic> _dataMap = {'contentData': baseResponse.data};
+        response.data = _dataMap;
+      }
+
+      // if (baseResponse.data is List<dynamic> &&
+      //     (baseResponse.data as List).isEmpty) {
+      //   response.data = <String, dynamic>{};
+      // } else {
+      //   response.data = baseResponse.data;
+      // }
     } else {
       return handler.reject(
         DioError(

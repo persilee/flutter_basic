@@ -28,9 +28,9 @@ void _varFinalConst() {
   apple = 1.2;
   print('apple type: ${apple.runtimeType}'); // double
 
-  final orange;
-  orange = '🍊';
-  print('orange type: ${orange.runtimeType}'); // String
+  // final orange;
+  // orange = '🍊';
+  // print('orange type: ${orange.runtimeType}'); // String
   //orange = '🍎'; // error: The final variable 'orange' can only be set once.
 
   //const grapes; // error: The constant 'grapes' must be initialized.

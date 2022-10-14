@@ -1,0 +1,15 @@
+/* 
+  Info Plist.strings
+  Runner
+
+  Created by Jason L on 2022/10/12.
+  
+*/
+
+"CFBundleName" = "ACU PAY";
+
+"CFBundleDisplayName" = "ACU PAY";
+
+"NSCameraUsageDescription" = "Whether ACU PAY is allowed to use the camera to take pictures for profile picture display and scan the transfer.";
+
+"NSPhotoLibraryAddUsageDescription" = "Whether to allow ACU PAY to access the album for the function of saving pictures to the album";

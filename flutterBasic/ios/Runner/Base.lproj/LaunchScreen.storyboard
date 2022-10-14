@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,24 +16,48 @@
                         <viewControllerLayoutGuide type="bottom" id="xbc-2k-c8Z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACU PAY Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p2-ux-Hud">
+                                <rect key="frame" x="136" y="406" width="142" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay Everywhere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Af0-n9-bO2">
+                                <rect key="frame" x="50" y="438" width="314" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_launch.png" translatesAutoresizingMaskIntoConstraints="NO" id="FDB-S3-2nD">
+                                <rect key="frame" x="155.5" y="280" width="103" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="Vn2-lg-DOQ"/>
+                                    <constraint firstAttribute="height" constant="104" id="teX-jq-Bnq"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1a2-6s-vTC"/>
-                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4X2-HB-R7a"/>
+                            <constraint firstItem="0p2-ux-Hud" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6eW-Lk-xob"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Af0-n9-bO2" secondAttribute="trailing" constant="30" id="72A-6D-22n"/>
+                            <constraint firstItem="Af0-n9-bO2" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="30" id="EYh-Il-upg"/>
+                            <constraint firstItem="Af0-n9-bO2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LE7-l0-X6k"/>
+                            <constraint firstItem="FDB-S3-2nD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TYp-6Q-PZe"/>
+                            <constraint firstItem="Af0-n9-bO2" firstAttribute="top" secondItem="0p2-ux-Hud" secondAttribute="bottom" constant="8" symbolic="YES" id="Wru-z6-n39"/>
+                            <constraint firstItem="0p2-ux-Hud" firstAttribute="top" secondItem="FDB-S3-2nD" secondAttribute="bottom" constant="22" id="fHF-w5-Gs5"/>
+                            <constraint firstItem="0p2-ux-Hud" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-30" id="rWX-uE-1ud"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="76.811594202898561" y="251.11607142857142"/>
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchImage" width="168" height="185"/>
+        <image name="icon_launch.png" width="103" height="105"/>
     </resources>
 </document>

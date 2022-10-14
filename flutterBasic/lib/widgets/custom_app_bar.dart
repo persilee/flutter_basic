@@ -524,7 +524,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       systemOverlayStyle: systemOverlayStyle,
       iconTheme: iconTheme,
       actionsIconTheme: actionsIconTheme,
-      titleTextStyle: titleTextStyle,
+      titleTextStyle:
+          const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       primary: primary,
       centerTitle: centerTitle,
       excludeHeaderSemantics: excludeHeaderSemantics,

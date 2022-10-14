@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:OnePay/widgets/custom_app_bar.dart';
-import 'package:OnePay/widgets/custom_scaffold.dart';
+import 'package:one_pay/widgets/custom_app_bar.dart';
+import 'package:one_pay/widgets/custom_scaffold.dart';
 
 class PageImage extends StatefulWidget {
   const PageImage({Key? key}) : super(key: key);

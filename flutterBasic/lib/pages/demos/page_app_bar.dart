@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:OnePay/widgets/custom_app_bar.dart';
-import 'package:OnePay/widgets/custom_scaffold.dart';
+import 'package:one_pay/widgets/custom_app_bar.dart';
+import 'package:one_pay/widgets/custom_scaffold.dart';
 
 class PageAppBar extends StatefulWidget {
   const PageAppBar({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class _PageAppBarState extends State<PageAppBar> {
     return CustomScaffold(
       appBar: CustomAppBar(
         title: const Text('App Bar'),
-        centerTitle: true,
+        centerTitle: false,
         elevation: 0,
         backgroundColor: Colors.transparent,
         systemOverlayStyle: SystemUiOverlayStyle.light,

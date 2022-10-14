@@ -39,7 +39,7 @@ class BaseResponse {
   num? _state;
   String? _code;
   String? _message;
-  dynamic? _data;
+  dynamic _data;
   List<Detail>? _detail;
   BaseResponse copyWith({
     String? system,

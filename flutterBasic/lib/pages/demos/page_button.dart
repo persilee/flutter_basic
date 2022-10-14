@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:OnePay/widgets/custom_app_bar.dart';
-import 'package:OnePay/widgets/custom_button.dart';
-import 'package:OnePay/widgets/custom_scaffold.dart';
+import 'package:one_pay/widgets/custom_app_bar.dart';
+import 'package:one_pay/widgets/custom_button.dart';
+import 'package:one_pay/widgets/custom_scaffold.dart';
 
 class PageButton extends StatefulWidget {
   const PageButton({Key? key}) : super(key: key);

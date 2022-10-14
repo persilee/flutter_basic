@@ -30,6 +30,7 @@ class ConfigKey {
   /// config key for user preference
   static const USER_ID = "user_id";
   static const USER_ACCOUNT = "user_account";
+  static const UserNumber = "userNo";
 
   /// config key for user secret preference
   static const ACCESS_TOKEN = "access_token";

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:OnePay/generated/l10n.dart';
-import 'package:OnePay/utils/language.dart';
+import 'package:one_pay/generated/l10n.dart';
+import 'package:one_pay/utils/language.dart';
 
 class LanguageModel extends ChangeNotifier {
   String _language = Language.getSaveLanguage();

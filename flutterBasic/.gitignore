@@ -14,9 +14,13 @@
 *.ipr
 *.iws
 .idea/
+pubspec.lock
 
 # 忽略使用json_serializable工具生成的代码
 *.g.dart
+
+# 忽略国际化工具自动生成的工具
+/lib/generated/
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
@@ -47,3 +51,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# 安装包
+/android/app/release/
+*.apk
+*.ipa
+.vscode/settings.json

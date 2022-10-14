@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:OnePay/generated/l10n.dart';
+import 'package:one_pay/generated/l10n.dart';
 
 /// 自定义异常
 class AppException implements Exception {
@@ -93,6 +93,9 @@ class AppException implements Exception {
           } else if (error.error is HttpException) {
             return error.error =
                 AppException("-1", S.current.network_error_unstable);
+          } else if (error.error is AppException) {
+            AppException err = error.error as AppException;
+            return error.error = AppException(err.code, err.message);
           }
           return error.error;
         }

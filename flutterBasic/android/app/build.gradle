@@ -26,7 +26,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 31 //flutter.compileSdkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,11 +43,16 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.basic.flutter_basic"
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        applicationId "com.hisunglobal.onepay.wallet.dev"
+        minSdkVersion 27//flutter.minSdkVersion
+        targetSdkVersion 31//flutter.targetSdkVersion
+        versionCode 1//flutterVersionCode.toInteger()
+        versionName "1.0.0"//flutterVersionName
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64' 'armeabi',
+        }
     }
 
     buildTypes {

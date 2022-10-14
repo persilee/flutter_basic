@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:OnePay/model/language_model.dart';
-import 'package:OnePay/routes/routes.dart';
-import 'package:OnePay/utils/hive_store.dart';
-import 'package:OnePay/utils/language.dart';
-import 'package:OnePay/utils/screen_util.dart';
-import 'package:OnePay/widgets/common_widgets.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:one_pay/model/language_model.dart';
+import 'package:one_pay/routes/routes.dart';
+import 'package:one_pay/utils/hive_store.dart';
+import 'package:one_pay/utils/language.dart';
+import 'package:one_pay/utils/screen_util.dart';
+import 'package:one_pay/widgets/common_widgets.dart';
 import 'package:provider/provider.dart';
 
 import 'generated/l10n.dart';
@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: createMaterialColor(const Color(0xff3161CE)),
       ),
+      onGenerateTitle: (BuildContext context) => 'OnePay',
       initialRoute: pageWelcome,
       routes: appRoutes,
       onGenerateRoute: (settings) => onGenerateRoute(settings),
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
           String savedLang = Language.getSaveLanguage();
           context.read<LanguageModel>().selectLanguage(savedLang);
         });
+        return;
       },
       supportedLocales: S.delegate.supportedLocales,
       navigatorKey: navigatorKey,

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:OnePay/utils/hive_store.dart';
-import 'package:OnePay/utils/language.dart';
+import 'package:flutter/foundation.dart';
+import 'package:one_pay/utils/hive_store.dart';
+import 'package:one_pay/utils/language.dart';
 
 class HeaderInterceptor extends Interceptor {
   @override
@@ -47,10 +48,15 @@ class HeaderInterceptor extends Interceptor {
       'Access-Token': Boxes.userSecretConfigBox
           .get(ConfigKey.ACCESS_TOKEN, defaultValue: '')
     });
-    options.headers.addAll({
-      'Access-UID':
-          Boxes.userSecretConfigBox.get(ConfigKey.ACCESS_UID, defaultValue: '')
-    });
+
+    options.headers.addAll({'Access-UID': 'be619ed60f35f75c2b3d0a94390ebdc0'});
+    // options.headers.addAll({
+    //   'Access-UID': Boxes.userSecretConfigBox.get(ConfigKey.ACCESS_UID,
+    //       defaultValue: 'ec902b0b7a9005738b853ba9a38ae5f5')
+    // });
+    if (kDebugMode) {
+      print("headers:${options.headers}");
+    }
 
     super.onRequest(options, handler);
   }

@@ -1,36 +1,39 @@
-import 'dart:ui';
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/hsg_colors.dart';
+
 class CustomScaffold extends StatelessWidget {
-  const CustomScaffold({
-    Key? key,
-    this.gradient,
-    this.appBar,
-    this.body,
-    this.floatingActionButton,
-    this.floatingActionButtonLocation,
-    this.floatingActionButtonAnimator,
-    this.persistentFooterButtons,
-    this.drawer,
-    this.onDrawerChanged,
-    this.endDrawer,
-    this.onEndDrawerChanged,
-    this.bottomNavigationBar,
-    this.bottomSheet,
-    this.backgroundColor,
-    this.resizeToAvoidBottomInset,
-    this.primary = true,
-    this.drawerDragStartBehavior = DragStartBehavior.start,
-    this.extendBody = false,
-    this.extendBodyBehindAppBar = false,
-    this.drawerScrimColor,
-    this.drawerEdgeDragWidth,
-    this.drawerEnableOpenDragGesture = true,
-    this.endDrawerEnableOpenDragGesture = true,
-    this.restorationId,
-  }) : super(key: key);
+  const CustomScaffold(
+      {Key? key,
+      this.gradient,
+      this.appBar,
+      this.body,
+      this.floatingActionButton,
+      this.floatingActionButtonLocation,
+      this.floatingActionButtonAnimator,
+      this.persistentFooterButtons,
+      this.drawer,
+      this.onDrawerChanged,
+      this.endDrawer,
+      this.onEndDrawerChanged,
+      this.bottomNavigationBar,
+      this.bottomSheet,
+      this.backgroundColor,
+      this.resizeToAvoidBottomInset,
+      this.primary = true,
+      this.drawerDragStartBehavior = DragStartBehavior.start,
+      this.extendBody = false,
+      this.extendBodyBehindAppBar = false,
+      this.drawerScrimColor,
+      this.drawerEdgeDragWidth,
+      this.drawerEnableOpenDragGesture = true,
+      this.endDrawerEnableOpenDragGesture = true,
+      this.restorationId,
+      this.topHeight = 70,
+      this.navPadding,
+      this.scaffodContainColor = HsgColors.colorffffff})
+      : super(key: key);
 
   final Gradient? gradient;
 
@@ -275,58 +278,129 @@ class CustomScaffold extends StatelessWidget {
   ///    Flutter.
   final String? restorationId;
 
+  ///自定义字段，白色模块距离顶部白色的高度
+  final double? topHeight;
+
+  final EdgeInsetsGeometry? navPadding;
+
+  final Color? scaffodContainColor;
+
   @override
   Widget build(BuildContext context) {
+    final scaffold = Scaffold(
+      appBar: appBar,
+      body: body,
+      floatingActionButton: floatingActionButton,
+      floatingActionButtonLocation: floatingActionButtonLocation,
+      floatingActionButtonAnimator: floatingActionButtonAnimator,
+      persistentFooterButtons: persistentFooterButtons,
+      drawer: drawer,
+      // onDrawerChanged: onDrawerChanged,
+      endDrawer: endDrawer,
+      // onEndDrawerChanged: onEndDrawerChanged,
+      bottomNavigationBar: bottomNavigationBar,
+      bottomSheet: bottomSheet,
+      backgroundColor: Colors.transparent, //backgroundColor,
+      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+      primary: primary,
+      drawerDragStartBehavior: drawerDragStartBehavior,
+      extendBody: extendBody,
+      extendBodyBehindAppBar: extendBodyBehindAppBar,
+      drawerScrimColor: drawerScrimColor,
+      drawerEdgeDragWidth: drawerEdgeDragWidth,
+      drawerEnableOpenDragGesture: drawerEnableOpenDragGesture,
+      endDrawerEnableOpenDragGesture: endDrawerEnableOpenDragGesture,
+      // restorationId: restorationId,
+    );
+
     return Container(
+      child: Stack(
+        children: [
+          Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                    top: topHeight! + MediaQuery.of(context).padding.top),
+                decoration: BoxDecoration(
+                  color: scaffodContainColor,
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(20)),
+                ),
+              ),
+            ],
+          ),
+          scaffold,
+        ],
+      ),
+
+      ///默认要是白色的，这个现在OB没有其他背景色
       decoration: BoxDecoration(
         gradient: gradient ??
             const LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color(0xFF2D4699),
-                Color(0xFF465DA9),
+                HsgColors.themeOPColor,
+                HsgColors.themeOPColor,
+                // Color(0xFF465DA9),
               ],
             ),
       ),
-      child: Stack(
-        children: [
-          Scaffold(
-            appBar: appBar,
-            body: Container(
-              padding: const EdgeInsets.only(top: 20.0),
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(20.0),
-                ),
-                color: Colors.white,
-              ),
-              child: body,
-            ),
-            floatingActionButton: floatingActionButton,
-            floatingActionButtonLocation: floatingActionButtonLocation,
-            floatingActionButtonAnimator: floatingActionButtonAnimator,
-            persistentFooterButtons: persistentFooterButtons,
-            drawer: drawer,
-            onDrawerChanged: onDrawerChanged,
-            endDrawer: endDrawer,
-            onEndDrawerChanged: onEndDrawerChanged,
-            bottomNavigationBar: bottomNavigationBar,
-            bottomSheet: bottomSheet,
-            backgroundColor: backgroundColor ?? Colors.transparent,
-            resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-            primary: primary,
-            drawerDragStartBehavior: drawerDragStartBehavior,
-            extendBody: extendBody,
-            extendBodyBehindAppBar: extendBodyBehindAppBar,
-            drawerScrimColor: drawerScrimColor,
-            drawerEdgeDragWidth: drawerEdgeDragWidth,
-            drawerEnableOpenDragGesture: drawerEnableOpenDragGesture,
-            endDrawerEnableOpenDragGesture: endDrawerEnableOpenDragGesture,
-            restorationId: restorationId,
-          ),
-        ],
-      ),
     );
+
+    // return Container(
+    // decoration: BoxDecoration(
+    // gradient: gradient ??
+    //     const LinearGradient(
+    //       begin: Alignment.topCenter,
+    //       end: Alignment.bottomCenter,
+    //       colors: [
+    //         HsgColors.themeOPColor,
+    //         HsgColors.themeOPColor,
+    //         // Color(0xFF465DA9),
+    //       ],
+    //     ),
+    // ),
+    //   child: Stack(
+    //     children: [
+    //       Scaffold(
+    //         appBar: appBar,
+    //         body: Container(
+    //           padding: const EdgeInsets.only(top: 20.0),
+    //           margin:
+    //               EdgeInsets.only(top: topHeight == 0 ? 32 : (topHeight! - 20)),
+    //           decoration: const BoxDecoration(
+    //             borderRadius: BorderRadius.vertical(
+    //               top: Radius.circular(20.0),
+    //             ),
+    //             color: Colors.white,
+    //           ),
+    //           child: body,
+    //         ),
+    //         floatingActionButton: floatingActionButton,
+    //         floatingActionButtonLocation: floatingActionButtonLocation,
+    //         floatingActionButtonAnimator: floatingActionButtonAnimator,
+    //         persistentFooterButtons: persistentFooterButtons,
+    //         drawer: drawer,
+    //         onDrawerChanged: onDrawerChanged,
+    //         endDrawer: endDrawer,
+    //         onEndDrawerChanged: onEndDrawerChanged,
+    //         bottomNavigationBar: bottomNavigationBar,
+    //         bottomSheet: bottomSheet,
+    //         backgroundColor: backgroundColor ?? Colors.transparent,
+    //         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+    //         primary: primary,
+    //         drawerDragStartBehavior: drawerDragStartBehavior,
+    //         extendBody: extendBody,
+    //         extendBodyBehindAppBar: extendBodyBehindAppBar,
+    //         drawerScrimColor: drawerScrimColor,
+    //         drawerEdgeDragWidth: drawerEdgeDragWidth,
+    //         drawerEnableOpenDragGesture: drawerEnableOpenDragGesture,
+    //         endDrawerEnableOpenDragGesture: endDrawerEnableOpenDragGesture,
+    //         restorationId: restorationId,
+    //       ),
+    //     ],
+    //   ),
+    // );
   }
 }

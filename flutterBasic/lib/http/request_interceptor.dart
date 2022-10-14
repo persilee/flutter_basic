@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 import 'base_body.dart';
 
@@ -20,6 +21,9 @@ class RequestInterceptor extends Interceptor {
       // );
       // print('options.data: ${BaseBody(data: options.data).toJson()}');
       options.data = BaseBody(data: options.data).toJson();
+      if (kDebugMode) {
+        print("requestData:${options.data}");
+      }
     }
     //清掉Key和IV
     // options.extra.clear();

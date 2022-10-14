@@ -1,4 +1,4 @@
-package com.example.basic.flutter_basic
+package com.hisunglobal.onepay.wallet.dev
 
 import io.flutter.embedding.android.FlutterActivity
 

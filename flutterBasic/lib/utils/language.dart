@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:OnePay/generated/l10n.dart';
 
 import 'hive_store.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:OnePay/widgets/custom_app_bar.dart';
-import 'package:OnePay/widgets/custom_scaffold.dart';
+import 'package:one_pay/widgets/custom_app_bar.dart';
+import 'package:one_pay/widgets/custom_scaffold.dart';
 
 class PageColumnRow extends StatefulWidget {
   const PageColumnRow({Key? key}) : super(key: key);
@@ -16,51 +16,32 @@ class _PageColumnRowState extends State<PageColumnRow> {
       appBar: CustomAppBar(
         title: const Text('Column And Row'),
       ),
-      body: Column(
-        //测试Row对齐方式，排除Column默认居中对齐的干扰
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(" hello world "),
-              Text(" I am Jack "),
-            ],
-          ),
-          Container(
-            color: Colors.lightBlue,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(" hello world "),
-                Text(" I am Jack "),
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            textDirection: TextDirection.rtl,
-            children: const [
-              Text(" hello world "),
-              Text(" I am Jack "),
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            verticalDirection: VerticalDirection.up,
-            children: const [
-              Text(
-                " hello world ",
-                style: TextStyle(fontSize: 30.0),
+      body: LayoutBuilder(builder: (context, c) {
+        return Container(
+          color: Colors.blue,
+          child: Column(
+            //测试Row对齐方式，排除Column默认居中对齐的干扰
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(),
+              const FlutterLogo(
+                size: 60,
               ),
-              Text(
-                " I am Jack ",
+              Expanded(
+                child: ListView(
+                  children: [
+                    ...List.generate(60, (index) => const Text('text'))
+                        .toList(),
+                  ],
+                ),
+              ),
+              const FlutterLogo(
+                size: 160,
               ),
             ],
           ),
-        ],
-      ),
+        );
+      }),
     );
   }
 }

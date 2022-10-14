@@ -1,10 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:OnePay/generated/l10n.dart';
-import 'package:OnePay/pages/demos/page_nav.dart';
-import 'package:OnePay/pages/home/page_home.dart';
-import 'package:OnePay/pages/profile/page_profile.dart';
+import 'package:one_pay/generated/l10n.dart';
+import 'package:one_pay/pages/demos/page_nav.dart';
+import 'package:one_pay/pages/home/page_home.dart';
+import 'package:one_pay/pages/profile/page_profile.dart';
+
+import '../utils/hsg_colors.dart';
 
 class PageNavigation extends StatefulWidget {
   const PageNavigation({Key? key}) : super(key: key);
@@ -63,7 +65,7 @@ class _PageNavigationState extends State<PageNavigation> {
         padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
         height: 54,
         decoration: const BoxDecoration(
-          color: Color.fromRGBO(59, 78, 181, 1),
+          color: HsgColors.themeOPColor,
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),
@@ -129,7 +131,7 @@ class _PageNavigationState extends State<PageNavigation> {
                       name,
                       style: const TextStyle(
                         fontSize: 12,
-                        color: Color(0xff465DA9),
+                        color: HsgColors.themeOPColor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
