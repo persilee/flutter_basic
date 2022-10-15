@@ -11,6 +11,7 @@ import 'package:one_pay/utils/status_bar_util.dart';
 import 'package:one_pay/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 
+import '../main.dart';
 import '../utils/hsg_colors.dart';
 
 class PageWelcome extends StatefulWidget {
@@ -103,7 +104,8 @@ class _PageWelcomeState extends State<PageWelcome> {
                       ),
                     ),
                     clickCallback: () {
-                      Navigator.pushNamed(context, pageReg);
+                      Navigator.pushNamed(context, pageReg)
+                          .then((value) => setState(() {}));
                     },
                   ),
                   const SizedBox(

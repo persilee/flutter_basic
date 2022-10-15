@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_basic/utils/screen_util.dart';
-import 'package:flutter_basic/utils/status_bar_util.dart';
+import 'package:one_pay/generated/l10n.dart';
+import 'package:one_pay/routes/routes.dart';
+import 'package:one_pay/utils/screen_util.dart';
+import 'package:one_pay/utils/status_bar_util.dart';
 
 class PageHome extends StatefulWidget {
   const PageHome({Key? key}) : super(key: key);
@@ -153,7 +155,6 @@ class _PageHomeState extends State<PageHome> {
     );
   }
 
-<<<<<<< HEAD
   Widget _buildHomeItem({required String image, required String name}) {
     return InkWell(
       onTap: () {
@@ -200,34 +201,6 @@ class _PageHomeState extends State<PageHome> {
             ),
           ],
         ),
-=======
-  Container _buildHomeItem({required String image, required String name}) {
-    return Container(
-      height: 120,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(10),
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset(
-            image,
-            width: 40,
-            height: 40,
-          ),
-          Text(
-            name,
-            style: const TextStyle(
-              color: Color(0xff333333),
-              fontWeight: FontWeight.w400,
-              fontSize: 14,
-            ),
-          ),
-        ],
->>>>>>> 3c57483220d55d01949d5d891d9759bc147b0aef
       ),
     );
   }
